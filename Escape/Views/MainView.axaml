@@ -6,35 +6,41 @@
              mc:Ignorable="d" d:DesignWidth="360" d:DesignHeight="640"
              x:Class="Escape.Views.MainView"
              x:DataType="vm:MainViewModel"
-             FontSize="20"
-             Foreground="AntiqueWhite">
+             FontSize="16"
+             Foreground="#F0F0F0">
   <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:MainViewModel />
   </Design.DataContext>
+
+  <UserControl.Resources>
+    <SolidColorBrush x:Key="Negro">#0A0A0A</SolidColorBrush>
+    <SolidColorBrush x:Key="Blanco">#F0F0F0</SolidColorBrush>
+    <SolidColorBrush x:Key="Plomo">#191919</SolidColorBrush>
+    <SolidColorBrush x:Key="Borde">#B43C3C</SolidColorBrush>
+    <SolidColorBrush x:Key="Deco">#003C00</SolidColorBrush>
+  </UserControl.Resources>
   <Grid>
-    <!--Arte-->
     <Grid>
       <!--Fondo-->
       <Image
         Name="Fondo"
-        Source="avares://Escape/Assets/Fondos/fondo.png"
         Stretch="UniformToFill"
-        StretchDirection="Both"/>
+        StretchDirection="Both"
+        Source="avares://Escape/Assets/Fondos/fondo.png"/>
 
       <!--Personaje-->
       <Grid
-        RowDefinitions="0.5*, 9.5*"
+        RowDefinitions="0.4*, 9.6*"
         ColumnDefinitions="2*, 8.5*, 0.5*">      
         <Image
           Grid.Row="1"
           Grid.Column="1"
           Name="Personaje"
+          VerticalAlignment="Bottom"
           Source="avares://Escape/Assets/Personajes/personaje.png"/>
       </Grid>
     </Grid>
-  
+
     <!--Menú-->
     <Grid
       HorizontalAlignment="Left"
@@ -48,12 +54,11 @@
         </Button>
     </Grid>
 
-
     <!--Textos-->
     <Grid
       RowDefinitions="7*, 2.9*, 0.1*"
       ColumnDefinitions="0.2*, 9.6*, 0.2*">
-      
+
       <!--Diálogos-->
       <Grid
         Grid.Row="1"
@@ -61,46 +66,121 @@
         <Grid
           RowDefinitions="2.2*, 0.3*, 7.5*"
           ColumnDefinitions="3*, 7*">
+
+          <!--Deco-->
+          <Ellipse
+            Grid.Row="2"
+            Width="8"
+            Height="8"
+            Margin="1 0 0 1"
+            Fill="{StaticResource Deco}"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"/>
+          <Ellipse
+            Grid.Row="2"
+            Width="4"
+            Height="14"
+            Margin="0 0 0 5"
+            Fill="{StaticResource Deco}"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"/>
+          <Ellipse
+            Grid.Row="2"
+            Width="14"
+            Height="4"
+            Margin="5 0 0 0"
+            Fill="{StaticResource Deco}"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"/>
+
+          <Ellipse 
+            Grid.Row="2"
+            Grid.Column="2"
+            Width="8"
+            Height="8"
+            Margin="0 1 1 0"
+            Fill="{StaticResource Deco}"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"/>
+          <Ellipse 
+            Grid.Row="2"
+            Grid.Column="2"
+            Width="5"
+            Height="14"
+            Margin="0 5 0 0"
+            Fill="{StaticResource Deco}"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"/>
+          <Ellipse 
+            Grid.Row="2"
+            Grid.Column="2"
+            Width="14"
+            Height="5"
+            Margin="0 0 5 0"
+            Fill="{StaticResource Deco}"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"/>
+
+          <!--Panel Nombre-->
           <Border
             Grid.Row="0"
-            Background="Black"
-            Opacity="0.8"
+            Opacity="0.9"
             BorderThickness="2"
-            BorderBrush="Brown"
+            BorderBrush="{StaticResource Borde}"
             CornerRadius="20 5 20 5"
-            BoxShadow="6 4 0 0 Black"/>
+            BoxShadow="6 4 0 0 #0A0A0A">
+              <Border.Background>
+                <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                  <GradientStop Offset="0.0" Color="#0A0A0A"/>
+                  <GradientStop Offset="0.7" Color="#0A0A0A"/>
+                  <GradientStop Offset="1.0" Color="#191919"/>
+                </LinearGradientBrush>
+              </Border.Background>
+            </Border>
+
+          <!--Panel Diálogos-->
           <Border
             Grid.Row="2"
             Grid.ColumnSpan="2"
-            Background="Black"
-            Opacity="0.8"
+            Opacity="0.9"
             BorderThickness="2"
-            BorderBrush="Black"
-            CornerRadius="10 40 10 40"
-            BoxShadow="6 4 0 0 Brown"/>
+            BorderBrush="{StaticResource Borde}"
+            CornerRadius="5 40 5 40"
+            BoxShadow="6 4 0 0 #0A0A0A">
+              <Border.Background>
+                <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                  <GradientStop Offset="0.0" Color="#0A0A0A"/>
+                  <GradientStop Offset="0.7" Color="#0A0A0A"/>
+                  <GradientStop Offset="1.0" Color="#191919"/>
+                </LinearGradientBrush>
+              </Border.Background>
+            </Border>
 
+          <!--Nombre-->
           <Grid
             Grid.Row="0">
             <TextBlock
               Name="Nombre"
               Text="Nombre" 
-              HorizontalAlignment="Left" 
-              VerticalAlignment="Center"
               FontWeight="Bold"
-              Margin="10"/>
+              HorizontalAlignment="Left"
+              VerticalAlignment="Center"
+              Margin="20 0 0 0"/>
           </Grid>
+
+          <!--Diálogos-->
           <Grid
             Grid.Row="2"
             Grid.ColumnSpan="2">
             <TextBlock
               Name="Diálogo"
-              Text="Diálogo lorem impsum dolor sit amet lorem impsum dolor sit amet"              
-              HorizontalAlignment="Left" 
+              Text="Diálogo Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              TextWrapping="Wrap"
+              HorizontalAlignment="Left"
               VerticalAlignment="Top"
-              Margin="20"
-              TextWrapping="Wrap"/>
+              Margin="20"/>
           </Grid>
-        </Grid>      
+        </Grid>
       </Grid>
     </Grid>
   </Grid>
