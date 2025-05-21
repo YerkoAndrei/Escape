@@ -3,14 +3,105 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Escape.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="360" d:DesignHeight="640"
              x:Class="Escape.Views.MainView"
-             x:DataType="vm:MainViewModel">
+             x:DataType="vm:MainViewModel"
+             FontSize="20"
+             Foreground="AntiqueWhite">
   <Design.DataContext>
     <!-- This only sets the DataContext for the previewer in an IDE,
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:MainViewModel />
   </Design.DataContext>
+  <Grid>
+    <!--Arte-->
+    <Grid>
+      <!--Fondo-->
+      <Image
+        Name="Fondo"
+        Source="avares://Escape/Assets/Fondos/fondo.png"
+        Stretch="UniformToFill"
+        StretchDirection="Both"/>
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      <!--Personaje-->
+      <Grid
+        RowDefinitions="0.5*, 9.5*"
+        ColumnDefinitions="2*, 8.5*, 0.5*">      
+        <Image
+          Grid.Row="1"
+          Grid.Column="1"
+          Name="Personaje"
+          Source="avares://Escape/Assets/Personajes/personaje.png"/>
+      </Grid>
+    </Grid>
+  
+    <!--Menú-->
+    <Grid
+      HorizontalAlignment="Left"
+      VerticalAlignment="Top"
+      Margin="10">
+        <Button
+          Grid.Row="1"
+          Grid.Column="1"
+          CornerRadius="100">
+          <TextBlock Text="    "/>
+        </Button>
+    </Grid>
+
+
+    <!--Textos-->
+    <Grid
+      RowDefinitions="7*, 2.9*, 0.1*"
+      ColumnDefinitions="0.2*, 9.6*, 0.2*">
+      
+      <!--Diálogos-->
+      <Grid
+        Grid.Row="1"
+        Grid.Column="1">
+        <Grid
+          RowDefinitions="2.2*, 0.3*, 7.5*"
+          ColumnDefinitions="3*, 7*">
+          <Border
+            Grid.Row="0"
+            Background="Black"
+            Opacity="0.8"
+            BorderThickness="2"
+            BorderBrush="Brown"
+            CornerRadius="20 5 20 5"
+            BoxShadow="6 4 0 0 Black"/>
+          <Border
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            Background="Black"
+            Opacity="0.8"
+            BorderThickness="2"
+            BorderBrush="Black"
+            CornerRadius="10 40 10 40"
+            BoxShadow="6 4 0 0 Brown"/>
+
+          <Grid
+            Grid.Row="0">
+            <TextBlock
+              Name="Nombre"
+              Text="Nombre" 
+              HorizontalAlignment="Left" 
+              VerticalAlignment="Center"
+              FontWeight="Bold"
+              Margin="10"/>
+          </Grid>
+          <Grid
+            Grid.Row="2"
+            Grid.ColumnSpan="2">
+            <TextBlock
+              Name="Diálogo"
+              Text="Diálogo lorem impsum dolor sit amet lorem impsum dolor sit amet"              
+              HorizontalAlignment="Left" 
+              VerticalAlignment="Top"
+              Margin="20"
+              TextWrapping="Wrap"/>
+          </Grid>
+        </Grid>      
+      </Grid>
+    </Grid>
+  </Grid>
 </UserControl>
