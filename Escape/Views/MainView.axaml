@@ -41,17 +41,78 @@
       </Grid>
     </Grid>
 
+    <!--Botón Siguiente-->
+    <Button
+      Grid.Row="0"
+      Grid.Column="2"
+      Grid.RowSpan="3"
+      Name="btnSiguiente"
+      Background="Transparent"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      Margin="5"/>
+
     <!--Menú-->
     <Grid
-      HorizontalAlignment="Left"
-      VerticalAlignment="Top"
-      Margin="10">
-        <Button
-          Grid.Row="1"
-          Grid.Column="1"
-          CornerRadius="100">
-          <TextBlock Text="    "/>
-        </Button>
+      RowDefinitions="0.5*, 0.5*, 0.5*, 0.5* 8*"
+      ColumnDefinitions="1*, 8*"
+      Margin="5">
+      <Button
+        Grid.Row="0"
+        Opacity="0.9"
+        CornerRadius="20"
+        Background="{StaticResource Negro}"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="1">
+        <TextBlock
+          Text="☰"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Foreground="{StaticResource Blanco}"/>
+      </Button>
+      <Button
+        Grid.Row="1"
+        Opacity="0.9"
+        CornerRadius="20"
+        Background="{StaticResource Negro}"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="1">
+        <TextBlock
+          Text="▶"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Foreground="{StaticResource Blanco}"/>
+      </Button>
+      <Button
+        Grid.Row="2"
+        Opacity="0.9"
+        CornerRadius="20"
+        Background="{StaticResource Negro}"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="1">
+        <TextBlock
+          Text="⏲"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Foreground="{StaticResource Blanco}"/>
+      </Button>
+      <Button
+        Grid.Row="3"
+        Opacity="0.9"
+        CornerRadius="20"
+        Background="{StaticResource Negro}"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="1">
+        <TextBlock
+          Text="👁"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Foreground="{StaticResource Blanco}"/>
+      </Button>
     </Grid>
 
     <!--Textos-->
