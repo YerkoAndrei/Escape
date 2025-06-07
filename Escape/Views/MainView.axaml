@@ -21,37 +21,14 @@
     <SolidColorBrush x:Key="Deco">#003C00</SolidColorBrush>
   </UserControl.Resources>
   <Grid>
+    <!--Fondo-->
     <Grid>
-      <!--Fondo-->
       <Image
         Name="Fondo"
         Stretch="UniformToFill"
         StretchDirection="Both"
         Source="avares://Escape/Assets/Fondos/fondo.png"/>
-
-      <!--Personaje-->
-      <Grid
-        RowDefinitions="0.4*, 9.6*"
-        ColumnDefinitions="2*, 8.5*, 0.5*">      
-        <Image
-          Grid.Row="1"
-          Grid.Column="1"
-          Name="Personaje"
-          VerticalAlignment="Bottom"
-          Source="avares://Escape/Assets/Personajes/personaje.png"/>
-      </Grid>
     </Grid>
-
-    <!--Botón Siguiente-->
-    <Button
-      Grid.Row="0"
-      Grid.Column="2"
-      Grid.RowSpan="3"
-      Name="btnSiguiente"
-      Background="Transparent"
-      HorizontalAlignment="Stretch"
-      VerticalAlignment="Stretch"
-      Margin="5"/>
 
     <!--Menú-->
     <Grid
@@ -60,6 +37,7 @@
       Margin="5">
       <Button
         Grid.Row="0"
+        Click="EnClicIniciar"
         Opacity="0.9"
         CornerRadius="20"
         Background="{StaticResource Negro}"
@@ -74,6 +52,7 @@
       </Button>
       <Button
         Grid.Row="1"
+        Click="EnClicIdioma"
         Opacity="0.9"
         CornerRadius="20"
         Background="{StaticResource Negro}"
@@ -88,6 +67,7 @@
       </Button>
       <Button
         Grid.Row="2"
+        Click="EnClicSonido"
         Opacity="0.9"
         CornerRadius="20"
         Background="{StaticResource Negro}"
@@ -102,6 +82,7 @@
       </Button>
       <Button
         Grid.Row="3"
+        Click="EnClicSalir"
         Opacity="0.9"
         CornerRadius="20"
         Background="{StaticResource Negro}"
@@ -114,136 +95,6 @@
           VerticalAlignment="Center"
           Foreground="{StaticResource Blanco}"/>
       </Button>
-    </Grid>
-
-    <!--Textos-->
-    <Grid
-      RowDefinitions="7*, 2.9*, 0.1*"
-      ColumnDefinitions="0.2*, 9.6*, 0.2*">
-
-      <!--Diálogos-->
-      <Grid
-        Grid.Row="1"
-        Grid.Column="1">
-        <Grid
-          RowDefinitions="2.2*, 0.3*, 7.5*"
-          ColumnDefinitions="3*, 7*">
-
-          <!--Deco-->
-          <Ellipse
-            Grid.Row="2"
-            Width="8"
-            Height="8"
-            Margin="1 0 0 1"
-            Fill="{StaticResource Deco}"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Bottom"/>
-          <Ellipse
-            Grid.Row="2"
-            Width="4"
-            Height="14"
-            Margin="0 0 0 5"
-            Fill="{StaticResource Deco}"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Bottom"/>
-          <Ellipse
-            Grid.Row="2"
-            Width="14"
-            Height="4"
-            Margin="5 0 0 0"
-            Fill="{StaticResource Deco}"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Bottom"/>
-
-          <Ellipse 
-            Grid.Row="2"
-            Grid.Column="2"
-            Width="8"
-            Height="8"
-            Margin="0 1 1 0"
-            Fill="{StaticResource Deco}"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"/>
-          <Ellipse 
-            Grid.Row="2"
-            Grid.Column="2"
-            Width="5"
-            Height="14"
-            Margin="0 5 0 0"
-            Fill="{StaticResource Deco}"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"/>
-          <Ellipse 
-            Grid.Row="2"
-            Grid.Column="2"
-            Width="14"
-            Height="5"
-            Margin="0 0 5 0"
-            Fill="{StaticResource Deco}"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"/>
-
-          <!--Panel Nombre-->
-          <Border
-            Grid.Row="0"
-            Opacity="0.9"
-            BorderThickness="2"
-            BorderBrush="{StaticResource Borde}"
-            CornerRadius="20 5 20 5"
-            BoxShadow="6 4 0 0 #0A0A0A">
-              <Border.Background>
-                <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
-                  <GradientStop Offset="0.0" Color="#0A0A0A"/>
-                  <GradientStop Offset="0.7" Color="#0A0A0A"/>
-                  <GradientStop Offset="1.0" Color="#191919"/>
-                </LinearGradientBrush>
-              </Border.Background>
-            </Border>
-
-          <!--Panel Diálogos-->
-          <Border
-            Grid.Row="2"
-            Grid.ColumnSpan="2"
-            Opacity="0.9"
-            BorderThickness="2"
-            BorderBrush="{StaticResource Borde}"
-            CornerRadius="5 40 5 40"
-            BoxShadow="6 4 0 0 #0A0A0A">
-              <Border.Background>
-                <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
-                  <GradientStop Offset="0.0" Color="#0A0A0A"/>
-                  <GradientStop Offset="0.7" Color="#0A0A0A"/>
-                  <GradientStop Offset="1.0" Color="#191919"/>
-                </LinearGradientBrush>
-              </Border.Background>
-            </Border>
-
-          <!--Nombre-->
-          <Grid
-            Grid.Row="0">
-            <TextBlock
-              Name="Nombre"
-              Text="Nombre" 
-              FontWeight="Bold"
-              HorizontalAlignment="Left"
-              VerticalAlignment="Center"
-              Margin="20 0 0 0"/>
-          </Grid>
-
-          <!--Diálogos-->
-          <Grid
-            Grid.Row="2"
-            Grid.ColumnSpan="2">
-            <TextBlock
-              Name="Diálogo"
-              Text="Diálogo Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              TextWrapping="Wrap"
-              HorizontalAlignment="Left"
-              VerticalAlignment="Top"
-              Margin="20"/>
-          </Grid>
-        </Grid>
-      </Grid>
     </Grid>
   </Grid>
 </UserControl>
