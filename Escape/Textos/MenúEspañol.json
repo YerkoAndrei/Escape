@@ -1,8 +1,8 @@
 {
     "nombreJuego": "Escape",
-    "continuar": "Continuar",
+    "iniciar": "Iniciar",
+    "reanudar": "Reanudar",
     "salir": "Salir",
     "pausa": "Pausa",
-    "opciones": "Opciones",
     "sonido": "Sonido"
 }

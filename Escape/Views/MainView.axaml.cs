@@ -15,6 +15,11 @@ public partial class MainView : UserControl
 
     }
 
+    public void EnClicReanudar(object sender, RoutedEventArgs args)
+    {
+
+    }
+
     public void EnClicIdioma(object sender, RoutedEventArgs args)
     {
 

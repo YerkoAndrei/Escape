@@ -29,72 +29,182 @@
         StretchDirection="Both"
         Source="avares://Escape/Assets/Fondos/fondo.png"/>
     </Grid>
-
-    <!--Menú-->
     <Grid
-      RowDefinitions="0.5*, 0.5*, 0.5*, 0.5* 8*"
-      ColumnDefinitions="1*, 8*"
-      Margin="5">
-      <Button
+      RowDefinitions="3*, 3*, 4*">
+
+      <!--Logo-->
+      <Image
         Grid.Row="0"
-        Click="EnClicIniciar"
-        Opacity="0.9"
-        CornerRadius="20"
-        Background="{StaticResource Negro}"
-        HorizontalAlignment="Stretch"
-        VerticalAlignment="Stretch"
-        Margin="1">
-        <TextBlock
-          Text="☰"
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center"
-          Foreground="{StaticResource Blanco}"/>
-      </Button>
-      <Button
+        Width="100"
+        Height="100"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Bottom"
+        Source="avares://Escape/Assets/avalonia-logo.ico"/>
+
+      <!--Título con contorno-->      
+      <TextBlock 
         Grid.Row="1"
-        Click="EnClicIdioma"
-        Opacity="0.9"
-        CornerRadius="20"
-        Background="{StaticResource Negro}"
-        HorizontalAlignment="Stretch"
-        VerticalAlignment="Stretch"
-        Margin="1">
-        <TextBlock
-          Text="▶"
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center"
-          Foreground="{StaticResource Blanco}"/>
-      </Button>
-      <Button
+        Text="Escape"
+        FontSize="60"
+        FontWeight="Bold"
+        Foreground="{StaticResource Negro}"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Margin="4,4,0,0"/>
+      <TextBlock 
+        Grid.Row="1"
+        Text="Escape"
+        FontSize="60"
+        FontWeight="Bold"
+        Foreground="{StaticResource Negro}"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Margin="4,-4,0,0"/>
+      <TextBlock 
+        Grid.Row="1"
+        Text="Escape"
+        FontSize="60"
+        FontWeight="Bold"
+        Foreground="{StaticResource Negro}"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Margin="-4,4,0,0"/>
+      <TextBlock 
+        Grid.Row="1"
+        Text="Escape"
+        FontSize="60"
+        FontWeight="Bold"
+        Foreground="{StaticResource Negro}"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Margin="-4,-4,0,0"/>
+      <TextBlock 
+        Grid.Row="1"
+        Text="Escape"
+        FontSize="60"
+        FontWeight="Bold"
+        Foreground="{StaticResource Blanco}"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"/>
+
+      <!--Menú-->
+      <Grid
         Grid.Row="2"
-        Click="EnClicSonido"
-        Opacity="0.9"
-        CornerRadius="20"
-        Background="{StaticResource Negro}"
-        HorizontalAlignment="Stretch"
-        VerticalAlignment="Stretch"
-        Margin="1">
-        <TextBlock
-          Text="⏲"
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center"
-          Foreground="{StaticResource Blanco}"/>
-      </Button>
-      <Button
-        Grid.Row="3"
-        Click="EnClicSalir"
-        Opacity="0.9"
-        CornerRadius="20"
-        Background="{StaticResource Negro}"
-        HorizontalAlignment="Stretch"
-        VerticalAlignment="Stretch"
-        Margin="1">
-        <TextBlock
-          Text="👁"
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center"
-          Foreground="{StaticResource Blanco}"/>
-      </Button>
+        RowDefinitions="1.6*, 1.6*, 0.5*, 1.6*, 1.6*, 1.6*, 1*"
+        Margin="5">
+        <Button
+          Grid.Row="0"
+          Click="EnClicIniciar"
+          Opacity="0.9"
+          CornerRadius="20"
+          Background="{StaticResource Negro}"
+          Foreground="{StaticResource Blanco}"
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch"
+          Margin="2">
+          <Grid>
+            <TextBlock
+              Text="Iniciar"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center"/>
+            <TextBlock
+              Text="▶"
+              Margin="0 0 10 0"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Center"/> 
+          </Grid>
+        </Button>
+        <Button
+          Grid.Row="1"
+          Click="EnClicReanudar"
+          Opacity="0.9"
+          CornerRadius="20"
+          Background="{StaticResource Negro}"
+          Foreground="{StaticResource Blanco}"
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch"
+          Margin="2">
+          <Grid>
+            <TextBlock
+              Text="Reanudar"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center"/>
+            <TextBlock
+              Text="⭯"
+              Margin="0 0 10 0"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Center"/> 
+          </Grid>
+        </Button>
+        <Button
+          Grid.Row="3"
+          Click="EnClicIdioma"
+          Opacity="0.9"
+          CornerRadius="20"
+          Background="{StaticResource Negro}"
+          Foreground="{StaticResource Blanco}"
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch"
+          Margin="2">
+          <Grid>
+            <TextBlock
+              Text="Español"
+              Name="txtIdioma"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center"/>
+            <TextBlock
+              Text="🌐"
+              Margin="0 0 10 0"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Center"/> 
+          </Grid>
+        </Button>
+        <Button
+          Grid.Row="4"
+          Click="EnClicSonido"
+          Opacity="0.9"
+          CornerRadius="20"
+          Background="{StaticResource Negro}"
+          Foreground="{StaticResource Blanco}"
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch"
+          Margin="2">
+          <Grid>
+            <TextBlock
+              Text="Sonido"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center"/>
+            <TextBlock
+              Text="🕪"
+              Name="imgSonido"
+              Margin="0 0 10 0"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Center"/>   
+          </Grid>
+        </Button>
+        <Button
+          Grid.Row="5"
+          Click="EnClicSalir"
+          Opacity="0.9"
+          CornerRadius="20"
+          Background="{StaticResource Negro}"
+          Foreground="{StaticResource Blanco}"
+          HorizontalAlignment="Stretch"
+          VerticalAlignment="Stretch"
+          Margin="2">
+          <Grid>
+            <TextBlock
+              Text="Salir"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center"/>
+            <TextBlock
+              Text="↵"
+              Margin="0 0 10 0"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Center"/>
+          </Grid>
+        </Button>
+      </Grid>    
     </Grid>
   </Grid>
 </UserControl>
