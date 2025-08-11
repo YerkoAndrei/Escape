@@ -6,7 +6,7 @@
              mc:Ignorable="d" d:DesignWidth="360" d:DesignHeight="640"
              x:Class="Escape.Views.MainView"
              x:DataType="vm:MainViewModel"
-             FontSize="16"
+             FontSize="18"
              Foreground="#F0F0F0"
              FontFamily="{StaticResource BadComic}">
   <Design.DataContext>
@@ -20,7 +20,9 @@
     <SolidColorBrush x:Key="Borde">#B43C3C</SolidColorBrush>
     <SolidColorBrush x:Key="Deco">#003C00</SolidColorBrush>
   </UserControl.Resources>
-  <Grid>
+
+  <!--Mantiene 16:9 en 1080-->
+  <Grid MaxWidth="607.5">
     <!--Fondo-->
     <Grid>
       <Image

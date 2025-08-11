@@ -6,7 +6,7 @@
              mc:Ignorable="d" d:DesignWidth="360" d:DesignHeight="640"
              x:Class="Escape.Views.Juego"
              x:DataType="vm:JuegoModel"
-             FontSize="16"
+             FontSize="18"
              Foreground="#F0F0F0"
              FontFamily="{StaticResource BadComic}">
   <Design.DataContext>
@@ -20,7 +20,9 @@
     <SolidColorBrush x:Key="Borde">#B43C3C</SolidColorBrush>
     <SolidColorBrush x:Key="Deco">#003C00</SolidColorBrush>
   </UserControl.Resources>
-  <Grid>
+
+  <!--Mantiene 16:9 en 1080-->
+  <Grid MaxWidth="607.5">
     <Grid>
       <!--Fondo-->
       <Image
@@ -123,7 +125,7 @@
 
     <!--Textos-->
     <Grid
-      RowDefinitions="7*, 2.9*, 0.1*"
+      RowDefinitions="7*, 2.85*, 0.15*"
       ColumnDefinitions="0.2*, 9.6*, 0.2*">
 
       <!--Diálogos-->
@@ -249,6 +251,82 @@
           </Grid>
         </Grid>
       </Grid>
+    </Grid>
+
+    <!--Botón Siguiente-->
+    <Button
+      Name="btnSiguiente"
+      Click="EnClicSiguiente"
+      Background="Transparent"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch"
+      Margin="10"/>
+
+    <!--Menú-->
+    <Grid
+      RowDefinitions="0.5*, 0.5*, 0.5*, 0.5* 8*"
+      ColumnDefinitions="1*, 8*"
+      Margin="5">
+      <Button
+        Grid.Row="0"
+        Click="EnClicMenú"
+        Opacity="0.9"
+        CornerRadius="20"
+        Background="{StaticResource Negro}"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="1">
+        <TextBlock
+          Text="☰"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Foreground="{StaticResource Blanco}"/>
+      </Button>
+      <Button
+        Grid.Row="1"
+        Click="EnClicAuto"
+        Opacity="0.9"
+        CornerRadius="20"
+        Background="{StaticResource Negro}"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="1">
+        <TextBlock
+          Text="▶"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Foreground="{StaticResource Blanco}"/>
+      </Button>
+      <Button
+        Grid.Row="2"
+        Click="EnClicHistorial"
+        Opacity="0.9"
+        CornerRadius="20"
+        Background="{StaticResource Negro}"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="1">
+        <TextBlock
+          Text="⏲"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Foreground="{StaticResource Blanco}"/>
+      </Button>
+      <Button
+        Grid.Row="3"
+        Click="EnClicOcultarTexto"
+        Opacity="0.9"
+        CornerRadius="20"
+        Background="{StaticResource Negro}"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        Margin="1">
+        <TextBlock
+          Text="👁"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Foreground="{StaticResource Blanco}"/>
+      </Button>
     </Grid>
   </Grid>
 </UserControl>
